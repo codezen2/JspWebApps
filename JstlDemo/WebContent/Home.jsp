@@ -31,11 +31,9 @@ a:hover {
 </style>
 </head>
 <body>
+	<%-- 		<%@include file="Header.jsp"%>--%>
+	<jsp:include page="Header.jsp"/>
 	<h1 align="center">HOME PAGE</h1>
-	<div align="center">
-		<%=application.getInitParameter("headstr")%>
-	</div>
-	<hr/>
 
 	<table cellpadding="10" style="margin: 0 auto;">
 		<tr>
@@ -43,8 +41,8 @@ a:hover {
 			<td><a href="SkillFrm.jsp">Update Profile</a></td>
 			<td><a href="QuizFrm.jsp">Quiz</a></td>
 			<td><a href="EligibleFrm.jsp">Job Eligiblty</a></td>
+			<td><a href="HtmlTutorial.jsp">HTML learning</a></td>
 			<td><a href="/downamex">Download file</a></td>
-			
 		</tr>
 
 	</table>

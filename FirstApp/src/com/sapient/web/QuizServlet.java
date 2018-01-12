@@ -3,6 +3,7 @@ package com.sapient.web;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -52,11 +53,13 @@ public class QuizServlet extends HttpServlet {
 			++score;
 		if (ans4 != null && ans4.equals("set"))
 			++score;
-
-		if (score >= 3)
+		ServletConfig cfg = getServletConfig();
+		double pSlab=Double.parseDouble(cfg.getInitParameter("passper"));
+		double pert=(score / 4.0) * 100.0;
+		if (pert >= pSlab)
 			res = "Pass";
 		request.setAttribute("score", score);
-		request.setAttribute("per", (score / 4.0) * 100);
+		request.setAttribute("per", pert);
 		request.setAttribute("result", res);
 		RequestDispatcher rd = request.getRequestDispatcher("QuizResult.jsp");
 		rd.forward(request, response);

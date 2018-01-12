@@ -32,6 +32,10 @@
 	<servlet>
 		<servlet-name>myquiz</servlet-name>
 		<servlet-class>com.sapient.web.QuizServlet</servlet-class>
+		<init-param>
+			<param-name>passper</param-name>
+			<param-value>50</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>myquiz</servlet-name>
@@ -45,6 +49,12 @@
 		<param-name>homepg</param-name>
 		<param-value>Home.jsp</param-value>
 	</context-param>
-
-
+	<servlet>
+		<servlet-name>DownServlet</servlet-name>
+		<servlet-class>com.sapient.web.DownServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownServlet</servlet-name>
+		<url-pattern>/downamex</url-pattern>
+	</servlet-mapping>
 </web-app>
